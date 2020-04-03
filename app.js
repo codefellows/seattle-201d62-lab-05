@@ -56,21 +56,21 @@ IMPORTANT DETAIL: You may not use the arithmetic operators + and * in this funct
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumAndMultiply() function and see if the test passes.*/
 
 // Write your code here
-function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sum1 = sum(a, b)[0];
-  var sum2 = sum(sum1, c)[0];
-  var sum3 = a + ' and ' + b + ' and ' + c + ' sum to ' + sum2 + '.'
+// function sumAndMultiply(a, b, c) { //eslint-disable-line
+//   var sum1 = sum(a, b)[0];
+//   var sum2 = sum(sum1, c)[0];
+//   var sum3 = a + ' and ' + b + ' and ' + c + ' sum to ' + sum2 + '.'
   
 
-  var pro1 = multiply(a, b)[0];
-  var pro2 = multiply(pro1, c)[0];
-  var pro3 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + pro2 + '.'
+//   var pro1 = multiply(a, b)[0];
+//   var pro2 = multiply(pro1, c)[0];
+//   var pro3 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + pro2 + '.'
 
-  return[sum2, pro2, sum3, pro3]
-}
+//   return[sum2, pro2, sum3, pro3]
+// }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -85,26 +85,26 @@ IMPORTANT DETAIL: You may not use the arithmetic operator + in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSumArray() function and see if the test passes.*/
 
 // Write your code here
-var testArray = [2, 3, 4]; //eslint-disable-line
+// var testArray = [2, 3, 4]; //eslint-disable-line
 
-function sumArray(sumArr) { //eslint-disable-line
-  var arrayTotal = 0;
+// function sumArray(sumArr) { //eslint-disable-line
+//   var arrayTotal = 0;
   
 
-  for(var i =0; i < sumArr.length; i++) {
-    arrayTotal = sum(arrayTotal, sumArr[i])[0];
-  }
-  console.log(arrayTotal);
+//   for(var i =0; i < sumArr.length; i++) {
+//     arrayTotal = sum(arrayTotal, sumArr[i])[0];
+//   }
+//   console.log(arrayTotal);
 
-  var string2 = sumArr + ' was passed in as an array of numbers, and ' + arrayTotal + ' is their sum.';
-  console.log(string2);
-  return [arrayTotal, string2]
-}
+//   var string2 = sumArr + ' was passed in as an array of numbers, and ' + arrayTotal + ' is their sum.';
+//   console.log(string2);
+//   return [arrayTotal, string2]
+// }
 
 
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -117,14 +117,24 @@ Write a function called multiplyArray() that takes an array of numbers as its ar
 IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To do multiplication, use your multiply() function that you've already created. You're going to have to be resourceful to figure out how to do this. This function should handle an array containing three elements. However, you may continue to use the + operator for string concatenation.
 
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
-
+var testArray = [2, 3, 4];
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var arrayAll = 1;
+  
+  for(var i = 0; i < multArr.length; i++) {
+    arrayAll = multiply(arrayAll, multArr[i])[0];
+  }
+  console.log(arrayAll);
+
+  var string3 = 'The numbers ' + multArr + ' have a product of ' + arrayAll + '.';
+  console.log(string3);
+  return [arrayAll, string3]
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
