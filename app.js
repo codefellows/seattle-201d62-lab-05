@@ -9,11 +9,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-
+  //sum(4,7)
+  // add, and output a string
+  //output an array
+  //sum(4,7)[0] === 11 && sum(4,7)[1] === 'The sum of 4(a) and 7(b) is 11(addedString).'  --this is what needs to happen when my sum runs
+  var addedSum = a+b;
+  var concatenatedString = 'The sum of ' + a + ' and ' + b + ' is ' + addedSum + '.';
+  return[addedSum, concatenatedString];
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
