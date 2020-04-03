@@ -19,7 +19,9 @@ function sum(a, b) { //eslint-disable-line
 
 // Here is the test for sum(); uncomment it to run it
 testSum(4, 7);
-
+// var x = sum(33, 21)
+// var y = sum (33, 11) = [addedSum, concatenatedString]
+// y[0] = 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
 /////////////////////////////////////
@@ -56,11 +58,24 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+    // sumAndMultiply(4, 7, 5)[0] === 16 && sumAndMultiply(4, 7, 5)[1] === 140 && sumAndMultiply(4, 7, 5)[2] === '4 and 7 and 5 sum to 16.' && sumAndMultiply(4, 7, 5)[3] === 'The product of 4 and 7 and 5 is 140.'
+    //  Third element: "4 and 7 and 5 sum to 16."
+    // Fourth element: "The product of a and b and c is 140."
 
+    var sumOne = sum(a, b)[0];
+    var sumTwo = sum(sumOne, c)[0];
+    var sumString = a + ' and ' + b + ' and ' + c + ' sum to ' + sumTwo + '.';
+
+    var multiOne = multiply(a, b)[0];
+    var multiTwo = multiply(multiOne, c)[0];
+    var multiString = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiTwo + '.';
+    console.log(sumString);
+    console.log(multiString);
+    return [sumTwo, multiTwo, sumString, multiString];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4, 7, 5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
