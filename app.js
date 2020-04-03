@@ -12,8 +12,8 @@ function sum(a, b) { //eslint-disable-line
   //sum(4,7)
   // add, and output a string
   //output an array
-  //sum(4,7)[0] === 11 && sum(4,7)[1] === 'The sum of 4(a) and 7(b) is 11(addedString).'  --this is what needs to happen when my sum runs
-  var addedSum = a+b;
+  //sum(4,7)[0] === 11 && sum(4,7)[1] === 'The sum of 4(a) and 7(b) is 11(addedSum).'  --this is what needs to happen when my sum runs
+  var addedSum = a + b;
   var concatenatedString = 'The sum of ' + a + ' and ' + b + ' is ' + addedSum + '.';
   return[addedSum, concatenatedString];
 }
@@ -32,12 +32,17 @@ Write a function called multiply() that takes in two numbers as arguments and re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiply() function and see if the test passes.*/
 
 // Write your code here
-function multiply(a, b) { //eslint-disable-line
+// takes in two numbers as arguments
+//returns an array - 1st element is the product of two argruments. 2nd string "The product of 5(a) and 9(b) is 45(multipliedNums)."
 
+function multiply(a, b) { //eslint-disable-line
+  var product = a * b;
+  var concatenatedString = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
+  return[product, concatenatedString];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
