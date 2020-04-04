@@ -8,16 +8,16 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
-function sum(a, b) { //eslint-disable-line
-    var theSum = a+b;
+function sum(a , b) { //eslint-disable-line
+    var theSum = a +b;
     var sumString = 'the sum of ' + a + ' and ' + b + ' is ' + theSum + '.';
-    console.log(sumString)
+    // console.log(sumString)
     return [theSum, sumString];
 
 }
 
 // Here is the test for sum(); uncomment it to run it
-testSum(4, 7);
+// testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -31,16 +31,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-    var theProduct = a * b;
-    console.log(theProduct);
-    var proString = 'the product of ' + a + ' and ' + b + ' is 45 '
-    console.log(proString);
-    return[theProduct, proString];
+    var theProduct = (a * b);
+    // console.log(theProduct);
+    var prodString = 'the product of ' + a + ' and ' + b + ' is ' +  theProduct + '.';
+    // console.log(proString);
+    return[theProduct, prodString];
 
 }
 
 // Here is the test for multiply(); uncomment it to run it
-testMultiply(5,9);
+// testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -59,17 +59,17 @@ Test this function by hand in the console to get it working, and when you think 
 function sumAndMultiply(a, b, c) { //eslint-disable-line
     var sum1 = sum(a, b)[0];
     var sum2 = sum(sum1, c)[0];
-    var sum3 = a + ' and ' + b + ' and ' + c + 'sum to ' + sum2
-
+    var sum3 = a + ' and ' + b + ' and ' + c + ' sum to ' + sum2 + '.';
+    // console.log(sum2);
     var pro1 = multiply(a, b)[0];
     var pro2 = multiply(pro1, c)[0];
-    var pro3 = 'the product of ' + a + ' and ' + b + ' and ' + c + ' is ' + pro2
-
+    var pro3 = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + pro2 + '.';
+    // console.log(pro2);
     return[sum2, pro2, sum3, pro3]
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-testSumAndMultiply(4,7,5);
+// testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -89,20 +89,20 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 function sumArray(sumArr) { //eslint-disable-line
     var arrayTotal = 0;
 
-    for(var i = 0; i < sumArr.length; i++){
+    for( var i = 0; i < sumArr.length; i++){
         arrayTotal = sum(arrayTotal, sumArr[i])[0];
     }
-    console.log(arrayTotal);
+        // console.log(sumArr[0] + ',' +  sumArr[1] + ',' + sumArr[2]);
 
-    var string2 = sumArr + ' was passed in as an array of numbers, and ' + arrayTotal + ' is their sum';
-    console.log(string2);
-    return [arrayTotal,string2]
+    var string = sumArr[0] + ',' +  sumArr[1] + ',' + sumArr[2] + ' was passed in as an array of numbers, and ' + arrayTotal + ' is their sum.';
+  
+    return [arrayTotal,string]
 
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-testSumArray(testArray);
+// testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -118,11 +118,22 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+    var arrayTotal = 1;
+    for( var i = 0; i < multArr.length; i++){
+        arrayTotal = multiply(arrayTotal, multArr[i])[0];
+    
+    
+
+}
+// console.log(multArr);
+var string3 = 'The numbers ' + multArr + ' have a product of ' + arrayTotal + '.';
+// console.log(string3);
+return[arrayTotal, string3]
 
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
