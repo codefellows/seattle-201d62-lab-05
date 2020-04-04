@@ -101,10 +101,10 @@ function sumArray(sumArr) { //eslint-disable-line
   for (var i = 0; i < sumArr.length; i++) {
     total = sum(total, sumArr[i])[0];
   }
-  console.log(total)
+  //console.log(total)
   var concatFor = sumArr + ' was passed in as an array of numbers, and ' + total + ' is their sum.';
 
-console.log(concatFor);
+//console.log(concatFor);
 
 return [total, concatFor];
 
@@ -128,11 +128,22 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  
+  var multTotal = 1
 
+  for (var i = 0; i < multArr.length; i++) {
+    multTotal = multiply(multTotal, multArr[i])[0];
+  }
+  //console.log(multTotal)
+  var concatForMult = 'The numbers ' + multArr + ' have a product of ' + multTotal + '.';
+
+//console.log(concatForMult);
+
+return [multTotal, concatForMult];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
