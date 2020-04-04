@@ -71,7 +71,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
 
   var concatMultSum = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productThree + '.';
 
-  //console.log(concatSumMult, concatMultSum)
+  console.log(concatSumMult, concatMultSum)
   return (sumThree, productThree, concatSumMult, concatMultSum);
   
 }
