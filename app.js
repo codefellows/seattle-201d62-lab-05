@@ -86,11 +86,19 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
+  var arraySum = sumArr[0]; //set the sum equal to the first number, in case there is only one number in the array
+  for (var i = 1; i < sumArr.length; i++) {
+    arraySum = sum(arraySum, sumArr[i])[0];
+  }
+
+  var arraySumMessage = sumArr + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.';
+
+  return [arraySum, arraySumMessage];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
