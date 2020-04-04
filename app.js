@@ -9,11 +9,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
+  var addNumbers = a + b;
+  var addNumbersStatement = 'The sum of ' + a + ' and ' + b + ' is '  + addNumbers + '.';
 
+  return [addNumbers, addNumbersStatement];
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -27,11 +30,14 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+  var multiplyNumbers = a * b;
+  var multiplyNumbersStatement = 'The product of ' + a + ' and ' + b + ' is ' + multiplyNumbers + '.';
 
+  return [multiplyNumbers, multiplyNumbersStatement];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -48,11 +54,20 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var firstAddNum = sum(a,b)[0];
+  var addNumbers = sum(firstAddNum, c)[0];
 
+  var firstMultiplyNum = multiply(a,b)[0];
+  var multiplyNumbers = multiply(firstMultiplyNum, c)[0];
+
+  var addNumbersStatement = a + ' and ' + b + ' and ' + c + ' sum to ' + addNumbers + '.';
+  var multiplyNumbersStatement = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiplyNumbers + '.';
+
+  return [addNumbers, multiplyNumbers, addNumbersStatement, multiplyNumbersStatement];
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -71,11 +86,19 @@ var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
 
+  var arraySum = sumArr[0]; //set the sum equal to the first number, in case there is only one number in the array
+  for (var i = 1; i < sumArr.length; i++) {
+    arraySum = sum(arraySum, sumArr[i])[0];
+  }
+
+  var arraySumMessage = sumArr + ' was passed in as an array of numbers, and ' + arraySum + ' is their sum.';
+
+  return [arraySum, arraySumMessage];
 }
 
 // Here is the test for sumArray(); uncomment it to run it
 
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -92,10 +115,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+  var arrayProduct = multArr[0]; //set the product equal to the first number, in case there is only one number in the array
+  for (var i = 1; i < multArr.length; i++) {
+    arrayProduct = multiply(arrayProduct, multArr[i])[0];
+  }
+
+  var arrayProductMessage = 'The numbers ' + multArr + ' have a product of ' + arrayProduct + '.';
+
+  return [arrayProduct, arrayProductMessage];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -120,9 +151,18 @@ var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
 
+  var anyArrayProduct = dynamicArray[0];//set the product to the first number in the array in case there is only one
+  for(var i = 1; i <dynamicArray.length; i++){
+    anyArrayProduct = multiply(anyArrayProduct, dynamicArray[i])[0];
+  }
+
+  var anyArrayProductMessage = 'The numbers ' + dynamicArray + ' have a product of ' + anyArrayProduct + '.';
+
+  return [120, anyArrayProductMessage];
+
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
