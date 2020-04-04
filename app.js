@@ -58,17 +58,21 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-  var sumThree = sum();
-  console.log()
-  return(sumThree)
 
-  
-
+  var firstSum = sum(a, b)[0];
+  var sumThree = sum(firstSum, c)[0];
+  //console.log(sumThree)
+    
+  var firstProduct = multiply(a, b)[0];
+  var productThree = multiply(firstProduct, c)[0];
+  //console.log(productThree)
  
-  
-  //var productThree = multiply();
-  // console.log(productThree)
-  //return [sumThree , productThree , a + ' and ' + b + ' and ' + c + ' sum to ' + sumThree + '.', 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productThree + '.']
+  var concatSumMult = a + ' and ' + b + ' and ' + c + ' sum to ' + sumThree + '.';
+
+  var concatMultSum = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + productThree + '.';
+
+  //console.log(concatSumMult, concatMultSum)
+  return (sumThree, productThree, concatSumMult, concatMultSum);
   
 }
 
