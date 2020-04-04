@@ -11,12 +11,18 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
-   
+    var value = a + b;
+    console.log(typeof value);
+    console.log(value);
+    var result = 'The sum of ' + a + ' and ' + b + ' is ' + value + '.';
+    console.log(result);
+    return [value,result];
     // var resultConcat = array[0];    
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum();
+testSum();
+sum();
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
