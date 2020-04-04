@@ -9,11 +9,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
+  var sumArray = [];
 
+  sumArray.push(a + b);
+  sumArray.push('The sum of ' + a + ' and ' + b + ' is ' + (a + b) + '.');
+
+  //console.log(sumArray);
+  return sumArray;
 }
 
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -27,11 +33,17 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
+  var multArray = [];
 
+  multArray.push(a * b);
+  multArray.push('The product of ' + a + ' and ' + b + ' is ' + (a * b) + '.');
+
+  //console.log(multArray);
+  return multArray;
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -48,11 +60,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
+  var multSumArray = [];
 
+  multSumArray.push(sum(sum(a,b)[0], c)[0]);
+  multSumArray.push(multiply(multiply(a,b)[0], c)[0]);
+  multSumArray.push(a + ' and ' + b + ' and ' + c + ' sum to ' + (sum(sum(a,b)[0], c)[0]) + '.');
+  multSumArray.push('The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + (multiply(multiply(a,b)[0], c)[0]) + '.');
+
+  //console.log(multSumArray);
+  return multSumArray;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
-// testSumAndMultiply(4,7,5);
+testSumAndMultiply(4,7,5);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -70,12 +90,16 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
+  var sumArray = [];
+  
+  sumArray.push(sum(sum(sumArr[0], sumArr[1])[0], sumArr[2])[0]);
+  sumArray.push(sumArr + ' was passed in as an array of numbers, and ' + sumArray[0] + ' is their sum.');
 
+  return sumArray;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
-
-// testSumArray(testArray);
+testSumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
@@ -91,11 +115,16 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
+  var multArray = [];
+  
+  multArray.push(multiply(multiply(multArr[0], multArr[1])[0], multArr[2])[0]);
+  multArray.push('The numbers ' + multArr + ' have a product of ' + multArray[0] + '.');
 
+  return multArray;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -119,10 +148,20 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+  var multArray = [];
+  var product = dynamicArray[0];
 
+  for(var i = 1; i < dynamicArray.length; i++) {
+    product = multiply(product, dynamicArray[i])[0];
+  }
+
+  multArray.push(product);
+  multArray.push('The numbers ' + dynamicArray + ' have a product of ' + product + '.');
+
+  return multArray;
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
