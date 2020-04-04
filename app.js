@@ -8,14 +8,42 @@ Write a function called sum() that takes in two numbers as arguments and then re
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testSum() function below and check the console to see if the test passes.*/
 
 // Write your code here
+// sum(4,7)
 function sum(a, b) { //eslint-disable-line
-
+// add and output a string 
+// output an array
+// sum(4,7)[0] === 11 && sum(4,7)[1] === 'The sum of 4 and 7 is 11.'
+var addedSum = a + b; // 11
+var concatenatedString = 'The sum of ' + a + ' and ' + b + ' is ' + addedSum + '.';
+return [addedSum, concatenatedString];
 }
 
+// Steps to succeed
+//  get a valid hard coded return to pass the test
+//  pull out the pieces as variables but keep them hard coded
+//  TODO: write logic to make those pieces equal the hard coded values, using parameters
+// TODO: check that the test passes at each point
+
 // Here is the test for sum(); uncomment it to run it
-// testSum(4, 7);
+testSum(4, 7);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
+
+// setup
+
+// first you are on master
+// second you checkout a branch called <functionname>
+//    - git checkout -b sum
+// ACP from this branch to github
+//    - git add . ; git commit -m "message here"; git push origin <branchname>
+//    - git add . ; git commit -m "message here"; git push origin sum
+// Merge on github ( create a pull request and make sure it is from your branch to your username/master)
+// pull the code to your machine's master branch
+//    - git checkout master
+//    - git pull origin master
+
+// Repeat step 'first'
+
 
 /////////////////////////////////////
 /* Problem 2
@@ -27,11 +55,15 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+  var multipliedNums = a * b;// variable stores the product of a * b
+  var productString = 'The product of ' + a + ' and ' + b + ' is ' + multipliedNums + '.';// prints the string
+  console.log(productString);
+  // multiply(5,9)[0] === 45 && multiply(5,9)[1] === 'The product of 5 and 9 is 45.'The product of 5 and 9 is 45
+  return [multipliedNums, productString];
 }
 
 // Here is the test for multiply(); uncomment it to run it
-// testMultiply(5,9);
+testMultiply(5,9);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
 
