@@ -115,10 +115,18 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
 
+  var arrayProduct = multArr[0]; //set the product equal to the first number, in case there is only one number in the array
+  for (var i = 1; i < multArr.length; i++) {
+    arrayProduct = multiply(arrayProduct, multArr[i])[0];
+  }
+
+  var arrayProductMessage = 'The numbers ' + multArr + ' have a product of ' + arrayProduct + '.';
+
+  return [arrayProduct, arrayProductMessage];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
