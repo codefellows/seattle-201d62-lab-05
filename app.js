@@ -135,7 +135,7 @@ function multiplyArray(multArr) { //eslint-disable-line
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-testMultiplyArray(testArray);
+// testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
@@ -156,13 +156,23 @@ This function should be dynamic, accepting an array of any length.
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyAnyArray() function and see if the test passes.*/
 
 // Write your code here
-// var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
+// // your joke array was here! lol  //eslint-disable-line
 
-// function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+var iJustDidThis = [42, 42, 42, 42, 42];
 
-// }
+function multiplyAnyArray(dynamicArray) { //eslint-disable-line
+    var product = 1;
+     
+    for(var indexCount = 0; indexCount < dynamicArray.length; indexCount ++){
+        product = multiply(dynamicArray[indexCount], product)[0];
+    }
+    console.log(product);
+    var talkProd = 'The numbers '  + dynamicArray + ' have a product of ' + product + '.';
+    return [product, talkProd];
+}
 
 // Here is the test for multiplyArray(); uncomment it to run it
 // testMultiplyAnyArray(testDynamicArray);
 
+multiplyAnyArray(iJustDidThis);
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
