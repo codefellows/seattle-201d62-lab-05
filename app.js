@@ -64,20 +64,12 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    var addFirst = sum(a, b)[0];
-    var addLast = sum(addFirst, c)[0];
-    console.log(addFirst);
-    console.log(addLast);
-    var multiFirst = multiply(a, b)[0];
-    var multiLast = multiply(multiFirst, c)[0];
-    console.log(multiFirst);
-    console.log(multiLast);
-    var addResponse = a + ' and ' + b + ' and ' + c + ' sum to ' + addLast + '.';
-    var multiResponse = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiLast + '.';
-    console.log(addResponse);
-    console.log(multiResponse);
-    return [addLast, multiLast, addResponse, multiResponse];
-
+    var addFirst = sum(a, sum(b, c)[0])[0];
+    var multiFirst = multiply(a, multiply(b, c)[0])[0];
+    var addResponse = a + ' and ' + b + ' and ' + c + ' sum to ' + addFirst + '.';
+    var multiResponse = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + multiFirst + '.';
+    return [addFirst, multiFirst, addResponse, multiResponse];
+  
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
@@ -114,8 +106,8 @@ function sumArray(sumArr) { //eslint-disable-line
 }
 console.log()
 // Here is the test for sumArray(); uncomment it to run it
+// testSumArray(testArray);
 
-testSumArray(testArray);
 // sumArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. Don't forget to create a new branch for your work on the next question!
@@ -131,12 +123,19 @@ IMPORTANT DETAIL: You may not use the arithmetic operator * in this function. To
 Test this function by hand in the console to get it working, and when you think it is finished, uncomment the call for the testMultiplyArray() function and see if the test passes.*/
 
 // Write your code here
-// function multiplyArray(multArr) { //eslint-disable-line
-
-// }
+function multiplyArray(multArr) { //eslint-disable-line
+    var product = 1;
+     
+    for(var indexCount = 0; indexCount < multArr.length; indexCount ++){
+        product = multiply(multArr[indexCount], product)[0];
+    }
+    console.log(product);
+    var talkProd = 'The numbers '  + testArray + ' have a product of ' + product + '.';
+    return [product, talkProd];
+}
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyArray(testArray);
+testMultiplyArray(testArray);
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. 
 
